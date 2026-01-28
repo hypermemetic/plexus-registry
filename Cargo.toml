@@ -1,0 +1,60 @@
+[package]
+name = "registry"
+version = "0.1.0"
+edition = "2021"
+description = "Backend discovery and registration service for Plexus hubs"
+license = "AGPL-3.0-only"
+
+[lib]
+name = "registry"
+path = "src/lib.rs"
+
+[[bin]]
+name = "registry"
+path = "src/main.rs"
+
+[dependencies]
+# Hub infrastructure
+hub-core = { path = "../hub-core" }
+hub-macro = { path = "../hub-macro" }
+hub-transport = { path = "../hub-transport" }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+tokio-stream = "0.1"
+futures = "0.3"
+futures-util = "0.3"
+async-trait = "0.1"
+async-stream = "0.3"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Schema generation
+schemars = { version = "1.1", features = ["derive", "uuid1"] }
+
+# Database (match substrate's version)
+sqlx = { version = "0.6", features = ["runtime-tokio-rustls", "sqlite"] }
+
+# Core types
+uuid = { version = "1.6", features = ["v4", "v5", "serde"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+
+# JSON-RPC (required by hub_macro generated code)
+jsonrpsee = { version = "0.26", features = ["server", "macros"] }
+
+# Config directories
+dirs = "5.0"
+
+[dev-dependencies]
+tempfile = "3"
+tokio-test = "0.4"
