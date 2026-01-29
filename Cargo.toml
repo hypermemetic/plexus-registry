@@ -55,6 +55,9 @@ jsonrpsee = { version = "0.26", features = ["server", "macros"] }
 # Config directories
 dirs = "5.0"
 
+# CLI
+clap = { version = "4.4", features = ["derive", "env"] }
+
 [dev-dependencies]
 tempfile = "3"
 tokio-test = "0.4"

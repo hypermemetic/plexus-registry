@@ -30,7 +30,7 @@ impl Registry {
     }
 
     /// Set the local backend name (called by the host)
-    pub fn set_local_backend(&self, name: String, description: Option<String>) {
+    pub fn set_local_backend(&self, _name: String, _description: Option<String>) {
         // Store in memory - this is the backend hosting this registry instance
         // We can't get this from the DB since the registry doesn't know who's hosting it
         // TODO: implement local backend tracking
