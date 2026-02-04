@@ -277,7 +277,7 @@ cargo test
 
 ```rust
 use registry::{Registry, RegistryStorageConfig};
-use hub_transport::TransportServer;
+use plexus_transport::TransportServer;
 use std::sync::Arc;
 
 #[tokio::main]

@@ -1,7 +1,7 @@
 use anyhow::Result;
 use clap::Parser;
-use hub_core::plexus::DynamicHub;
-use hub_transport::TransportServer;
+use plexus_core::plexus::DynamicHub;
+use plexus_transport::TransportServer;
 use registry::{Registry, RegistryStorageConfig};
 use std::path::PathBuf;
 use std::sync::Arc;

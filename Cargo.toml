@@ -49,7 +49,7 @@ uuid = { version = "1.6", features = ["v4", "v5", "serde"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
 
-# JSON-RPC (required by hub_macro generated code)
+# JSON-RPC (required by plexus_macros generated code)
 jsonrpsee = { version = "0.26", features = ["server", "macros"] }
 
 # Config directories

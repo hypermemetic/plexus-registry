@@ -2,7 +2,7 @@ use crate::storage::RegistryStorage;
 use crate::types::{BackendSource, RegistryEvent, RegistryStorageConfig};
 use async_stream::stream;
 use futures::Stream;
-use hub_macro::hub_methods;
+use plexus_macros::hub_methods;
 use std::sync::Arc;
 
 /// Registry activation - backend discovery and registration service
@@ -44,7 +44,7 @@ impl Registry {
 )]
 impl Registry {
     /// Register a new backend
-    #[hub_macro::hub_method(description = "Register a new Plexus backend for discovery")]
+    #[plexus_macros::hub_method(description = "Register a new Plexus backend for discovery")]
     async fn register(
         &self,
         name: String,
@@ -83,7 +83,7 @@ impl Registry {
     }
 
     /// List all registered backends
-    #[hub_macro::hub_method(description = "List all registered backends")]
+    #[plexus_macros::hub_method(description = "List all registered backends")]
     async fn list(
         &self,
         active_only: Option<bool>,
@@ -106,7 +106,7 @@ impl Registry {
     }
 
     /// Get a specific backend by name
-    #[hub_macro::hub_method(description = "Get information about a specific backend by name")]
+    #[plexus_macros::hub_method(description = "Get information about a specific backend by name")]
     async fn get(
         &self,
         name: String,
@@ -127,7 +127,7 @@ impl Registry {
     }
 
     /// Update an existing backend
-    #[hub_macro::hub_method(description = "Update an existing backend's connection information")]
+    #[plexus_macros::hub_method(description = "Update an existing backend's connection information")]
     async fn update(
         &self,
         name: String,
@@ -158,7 +158,7 @@ impl Registry {
     }
 
     /// Delete a backend
-    #[hub_macro::hub_method(description = "Remove a backend from the registry")]
+    #[plexus_macros::hub_method(description = "Remove a backend from the registry")]
     async fn delete(
         &self,
         name: String,
@@ -184,7 +184,7 @@ impl Registry {
     }
 
     /// Ping a backend to update its last_seen timestamp
-    #[hub_macro::hub_method(description = "Update the health check timestamp for a backend")]
+    #[plexus_macros::hub_method(description = "Update the health check timestamp for a backend")]
     async fn ping(
         &self,
         name: String,
@@ -216,7 +216,7 @@ impl Registry {
     }
 
     /// Reload the configuration file
-    #[hub_macro::hub_method(description = "Reload backends from the configuration file")]
+    #[plexus_macros::hub_method(description = "Reload backends from the configuration file")]
     async fn reload(&self) -> impl Stream<Item = RegistryEvent> + Send + 'static {
         let storage = self.storage.clone();
 

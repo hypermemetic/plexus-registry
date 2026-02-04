@@ -14,7 +14,7 @@
 //!
 //! ```rust,no_run
 //! use registry::{Registry, RegistryStorageConfig};
-//! use hub_core::plexus::Plexus;
+//! use plexus_core::plexus::Plexus;
 //! use std::sync::Arc;
 //!
 //! # async fn example() {
@@ -27,16 +27,16 @@ pub mod activation;
 pub mod storage;
 pub mod types;
 
-// Re-export plexus module for hub_macro compatibility
+// Re-export plexus module for plexus_macros compatibility
 // The hub_methods macro expects crate::plexus::* to be available
 pub mod plexus {
-    pub use hub_core::plexus::*;
-    pub use hub_core::types::Handle;
+    pub use plexus_core::plexus::*;
+    pub use plexus_core::types::Handle;
 }
 
 // Re-export serde helpers for macro-generated code
 // This allows the hub_methods macro to reference serde helpers via crate::serde_helpers
-pub use hub_core::serde_helpers;
+pub use plexus_core::serde_helpers;
 
 pub use activation::Registry;
 pub use types::{BackendInfo, BackendSource, RegistryEvent, RegistryStorageConfig};
