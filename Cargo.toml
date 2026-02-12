@@ -1,22 +1,22 @@
 [package]
-name = "registry"
+name = "plexus-registry"
 version = "0.1.0"
 edition = "2021"
 description = "Backend discovery and registration service for Plexus hubs"
 license = "AGPL-3.0-only"
 
 [lib]
-name = "registry"
+name = "plexus_registry"
 path = "src/lib.rs"
 
 [[bin]]
-name = "registry"
+name = "plexus-registry"
 path = "src/main.rs"
 
 [dependencies]
 # Hub infrastructure
-plexus-core = "0.2.1"
-plexus-macros = "0.2.1"
+plexus-core = "0.3.0"
+plexus-macros = "0.3.0"
 plexus-transport = "0.1.0"
 
 # Serialization
