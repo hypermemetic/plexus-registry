@@ -13,13 +13,13 @@
 //! # Example
 //!
 //! ```rust,no_run
-//! use registry::{Registry, RegistryStorageConfig};
-//! use plexus_core::plexus::Plexus;
+//! use plexus_registry::Registry;
+//! use plexus_core::plexus::DynamicHub;
 //! use std::sync::Arc;
 //!
 //! # async fn example() {
 //! let registry = Registry::with_defaults().await.unwrap();
-//! let plexus = Arc::new(Plexus::new().register(registry));
+//! let plexus = Arc::new(DynamicHub::new("registry").register(registry));
 //! # }
 //! ```
 

@@ -2,7 +2,7 @@ use anyhow::Result;
 use clap::Parser;
 use plexus_core::plexus::DynamicHub;
 use plexus_transport::TransportServer;
-use registry::{Registry, RegistryStorageConfig};
+use plexus_registry::{Registry, RegistryStorageConfig};
 use std::path::PathBuf;
 use std::sync::Arc;
 use tracing_subscriber::EnvFilter;
