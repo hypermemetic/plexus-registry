@@ -1,6 +1,6 @@
 [package]
 name = "plexus-registry"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Backend discovery and registration service for Plexus hubs"
 license = "AGPL-3.0-only"
