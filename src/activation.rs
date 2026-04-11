@@ -37,10 +37,11 @@ impl Registry {
     }
 }
 
-#[hub_methods(
+#[activation(
     namespace = "registry",
     version = "1.0.0",
-    description = "Backend discovery and registration service for Plexus hubs"
+    description = "Backend discovery and registration service for Plexus hubs",
+    crate_path = "plexus_core"
 )]
 impl Registry {
     /// Register a new backend
