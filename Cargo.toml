@@ -15,8 +15,8 @@ path = "src/main.rs"
 
 [dependencies]
 # Hub infrastructure
-plexus-core = "0.4.0"
-plexus-macros = "0.4.0"
+plexus-core = "0.5"
+plexus-macros = "0.5"
 plexus-transport = "0.1.0"
 
 # Serialization
